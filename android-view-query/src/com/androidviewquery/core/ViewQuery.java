@@ -193,8 +193,8 @@ public class ViewQuery<V extends View, Q extends ViewQuery<V, Q>> {
 			boolean setHeight) {
 		// height or width value < 0 means the value is one of
 		// LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT or
-		// LayoutParams.FILL_PAREN. Hence, we don't need to convert to Pixels
-		// when that happens.
+		// LayoutParams.FILL_PAREN. If this is the case, we don't need to
+		// convert to pixels.
 		int widthPixels = width <= 0 ? width : dip2pixel(getContext(), width);
 		int heightPixels = height <= 0 ? height : dip2pixel(getContext(),
 				height);

@@ -41,10 +41,6 @@ public class TextViewQuery extends ViewQuery<TextView, TextViewQuery> {
 		return self();
 	}
 
-	// public TextViewQuery x() {
-	// return self();
-	// }
-
 	/**
 	 * Size must be given in scaled-pixel(sp) unit.
 	 */

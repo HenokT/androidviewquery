@@ -51,12 +51,4 @@ public class ViewQueryFactory {
 	public ImageViewQuery with(ImageView view) {
 		return new ImageViewQuery(view);
 	}
-
-	// public static void main(String[] args) {
-	// ViewQueryFactory vqf = new ViewQueryFactory(null);
-	// TextViewQuery tvq = vqf.withTextView(0).text("Sample Title")
-	// .textColor(0).background(0).goneIf(true);
-	// CharSequence text = tvq.getView().getText();
-	// vqf.with(new ImageView(null)).image((Drawable) null);
-	// }
 }
