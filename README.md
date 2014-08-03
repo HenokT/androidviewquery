@@ -5,6 +5,7 @@ An android library inspired by AndroidQuery but with focus only on View manipula
 
 **Before ViewQuery:**
 
+```
 @Override
 protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
@@ -30,7 +31,7 @@ protected void onCreate(Bundle savedInstanceState) {
 	name.setTextColor(getResources().getColor(android.R.color.black));
 	name.setTextSize(16);
 }
-
+```
 
 **With ViewQuery:**
 
