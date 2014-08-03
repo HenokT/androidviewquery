@@ -10,15 +10,15 @@ import android.view.ViewGroup.LayoutParams;
 
 /**
  * This is the base class for all view query classes that provide a fluent api
- * for operating on a given view
+ * for operating a given view
  *
  * @param <V>
  * @param <Q>
  */
-public class ViewQuery<V extends View, Q extends ViewQuery<V, Q>> {
+public class AbstractViewQuery<V extends View, Q extends AbstractViewQuery<V, Q>> {
 	private V view;
 
-	public ViewQuery(V view) {
+	public AbstractViewQuery(V view) {
 		this.view = view;
 	}
 
@@ -158,8 +158,8 @@ public class ViewQuery<V extends View, Q extends ViewQuery<V, Q>> {
 			lp.height = height;
 		}
 		if (setWidth || setHeight) {
-			// no need to set the layout parameters if neither width nor height
-			// is changed
+			// no need to set reset LayoutParams if neither width nor
+			// height is changed
 			getView().setLayoutParams(lp);
 		}
 		return self();
@@ -191,7 +191,7 @@ public class ViewQuery<V extends View, Q extends ViewQuery<V, Q>> {
 
 	private Q sizeDips(int width, int height, boolean setWidth,
 			boolean setHeight) {
-		// height or width value < 0 means the value is one of
+		// height or width value < 0 means it is one of
 		// LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT or
 		// LayoutParams.FILL_PAREN. If this is the case, we don't need to
 		// convert to pixels.

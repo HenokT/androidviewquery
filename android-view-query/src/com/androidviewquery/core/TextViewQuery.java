@@ -7,7 +7,7 @@ import android.widget.TextView;
  * Provides fluent api for operating on a given {@link TextView}
  *
  */
-public class TextViewQuery extends ViewQuery<TextView, TextViewQuery> {
+public class TextViewQuery extends AbstractViewQuery<TextView, TextViewQuery> {
 
 	public TextViewQuery(TextView view) {
 		super(view);

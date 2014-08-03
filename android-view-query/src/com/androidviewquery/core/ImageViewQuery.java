@@ -11,7 +11,7 @@ import android.widget.TextView;
  * Provides fluent api for operating on a given {@link TextView}
  *
  */
-public class ImageViewQuery extends ViewQuery<ImageView, ImageViewQuery> {
+public class ImageViewQuery extends AbstractViewQuery<ImageView, ImageViewQuery> {
 
 	public ImageViewQuery(ImageView view) {
 		super(view);

@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * A factory for {@link ViewQuery} objects that operate on descendants of the
+ * A factory for {@link AbstractViewQuery} objects that operate on descendants of the
  * root {@link View} associated with this factory
  * 
  */
@@ -29,10 +29,10 @@ public class ViewQueryFactory {
 	 * @return
 	 */
 	public TextViewQuery withTextView(int id) {
-		return with((TextView) findViewById(id));
+		return withTextView((TextView) findViewById(id));
 	}
 
-	public TextViewQuery with(TextView view) {
+	public TextViewQuery withTextView(TextView view) {
 		return new TextViewQuery(view);
 	}
 
@@ -45,10 +45,10 @@ public class ViewQueryFactory {
 	 * @return
 	 */
 	public ImageViewQuery withImageView(int id) {
-		return with((ImageView) findViewById(id));
+		return withImageView((ImageView) findViewById(id));
 	}
 
-	public ImageViewQuery with(ImageView view) {
+	public ImageViewQuery withImageView(ImageView view) {
 		return new ImageViewQuery(view);
 	}
 
@@ -61,10 +61,10 @@ public class ViewQueryFactory {
 	 * @return
 	 */
 	public GenericViewQuery withView(int id) {
-		return with(findViewById(id));
+		return withView(findViewById(id));
 	}
 
-	public GenericViewQuery with(View view) {
+	public GenericViewQuery withView(View view) {
 		return new GenericViewQuery(view);
 	}
 }
