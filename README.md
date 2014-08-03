@@ -6,7 +6,7 @@ An android library inspired by AndroidQuery but with focus only on View manipula
 **Example:**
 
 ```
-Vprivate void updateView(View rootView, Data data) {
+private void updateView(View rootView, Data data) {
 		ViewQueryFactory vqf = new ViewQueryFactory(rootView);
 
 		vqf.withView(R.id.container).background(R.color.black)

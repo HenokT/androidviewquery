@@ -15,7 +15,7 @@ import android.view.ViewGroup.LayoutParams;
  * @param <V>
  * @param <Q>
  */
-public class AbstractViewQuery<V extends View, Q extends AbstractViewQuery<V, Q>> {
+public abstract class AbstractViewQuery<V extends View, Q extends AbstractViewQuery<V, Q>> {
 	private V view;
 
 	public AbstractViewQuery(V view) {
