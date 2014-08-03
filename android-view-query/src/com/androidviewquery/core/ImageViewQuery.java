@@ -17,6 +17,11 @@ public class ImageViewQuery extends ViewQuery<ImageView, ImageViewQuery> {
 		super(view);
 	}
 
+	public ImageViewQuery image(int resId) {
+		getView().setImageResource(resId);
+		return self();
+	}
+
 	public ImageViewQuery image(Bitmap bitmap) {
 		getView().setImageBitmap(bitmap);
 		return self();

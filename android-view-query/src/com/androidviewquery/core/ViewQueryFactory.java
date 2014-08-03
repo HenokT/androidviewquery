@@ -51,4 +51,20 @@ public class ViewQueryFactory {
 	public ImageViewQuery with(ImageView view) {
 		return new ImageViewQuery(view);
 	}
+
+	/**
+	 * Returns a new {@link ImageViewQuery} object that operates on the
+	 * {@link ImageView} with the given id. The {@link ImageView} must be a
+	 * descendant of the root view associated with this factory
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public GenericViewQuery withView(int id) {
+		return with(findViewById(id));
+	}
+
+	public GenericViewQuery with(View view) {
+		return new GenericViewQuery(view);
+	}
 }
