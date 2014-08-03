@@ -7,6 +7,8 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 /**
  * This is the base class for all view query classes that provide a fluent api
@@ -33,6 +35,58 @@ public abstract class AbstractViewQuery<V extends View, Q extends AbstractViewQu
 	@SuppressWarnings("unchecked")
 	protected Q self() {
 		return (Q) this;
+	}
+
+	private View findViewById(int id) {
+		return getView().findViewById(id);
+	}
+
+	/**
+	 * Returns a new {@link TextViewQuery} object that operates on a
+	 * {@link TextView} with the given id. The {@link TextView} must be a
+	 * descendant of the root view associated with the current view query
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public TextViewQuery withTextView(int id) {
+		return withTextView((TextView) findViewById(id));
+	}
+
+	public TextViewQuery withTextView(TextView view) {
+		return new TextViewQuery(view);
+	}
+
+	/**
+	 * Returns a new {@link ImageViewQuery} object that operates on an
+	 * {@link ImageView} with the given id. The {@link ImageView} must be a
+	 * descendant of the root view associated with the current view query
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public ImageViewQuery withImageView(int id) {
+		return withImageView((ImageView) findViewById(id));
+	}
+
+	public ImageViewQuery withImageView(ImageView view) {
+		return new ImageViewQuery(view);
+	}
+
+	/**
+	 * Returns a new {@link ViewQuery} object that operates on a {@link View}
+	 * with the given id. The {@link View} must be a descendant of the root view
+	 * associated with this the current view query
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public ViewQuery withView(int id) {
+		return withView(findViewById(id));
+	}
+
+	public ViewQuery withView(View view) {
+		return new ViewQuery(view);
 	}
 
 	public Q background(int color) {

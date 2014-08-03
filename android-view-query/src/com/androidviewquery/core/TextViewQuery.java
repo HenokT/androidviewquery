@@ -41,8 +41,13 @@ public class TextViewQuery extends AbstractViewQuery<TextView, TextViewQuery> {
 		return self();
 	}
 
+	public TextViewQuery textColorRes(int resId) {
+		getView().setTextColor(getContext().getResources().getColor(resId));
+		return self();
+	}
+
 	/**
-	 * Size must be given in scaled-pixel(sp) unit.
+	 * Size must be given in scaled-pixel unit (sp).
 	 */
 	public TextViewQuery textSize(int size) {
 		getView().setTextSize(size);

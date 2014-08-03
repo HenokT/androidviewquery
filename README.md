@@ -6,16 +6,21 @@ An android library inspired by AndroidQuery but with focus only on View manipula
 **Example:**
 
 ```
-private void updateView(View rootView, Data data) {
-		ViewQueryFactory vqf = new ViewQueryFactory(rootView);
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_main);
 
-		vqf.withView(R.id.container).background(R.color.black)
-				.sizeDips(240, LayoutParams.WRAP_CONTENT);
-		vqf.withTextView(R.id.title).text(data.getTitle())
-				.background(R.color.blue).textColor(R.color.white)
-				.goneIf(data.size() == 0);
-		vqf.withImageView(R.id.icon).image(R.drawable.icon).imageAlpha(5)
-				.visibleIf(data.size() > 0);
+	View rootView = findViewById(R.id.continer);
 
-	}
+	ViewQuery vq = new ViewQuery(rootView);
+	vq.backgroundRes(android.R.color.background_light);
+
+	vq.withTextView(R.id.title).text("Contacts").textColor(Color.BLACK)
+			.textSize(20);
+	vq.withImageView(R.id.icon).image(R.drawable.icon_placeholder)
+			.sizeDips(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+	vq.withTextView(R.id.name).text("John Smith")
+			.textColorRes(android.R.color.black).textSize(16);
+}
 ```
