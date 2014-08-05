@@ -41,10 +41,8 @@ protected void onCreate(Bundle savedInstanceState) {
 	super.onCreate(savedInstanceState);
 	setContentView(R.layout.activity_main);
 
-	View container = findViewById(R.id.continer);
-	ViewQuery vq = new ViewQuery(container);
-	vq.backgroundRes(android.R.color.background_light);
-
+	ViewQuery vq = new ViewQuery(findViewById(R.id.continer))
+			.backgroundRes(android.R.color.background_light);
 	vq.withTextView(R.id.title).text("Contacts").textColor(Color.BLACK)
 			.textSize(20);
 	vq.withImageView(R.id.icon).image(R.drawable.icon_placeholder)
